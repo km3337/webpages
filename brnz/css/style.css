@@ -1,0 +1,64 @@
+
+body{
+    background-image: url(ripple_blue_green.gif) ;
+}
+nav{
+    /*navagation bar setup*/
+    background-color:black;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0px; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */    
+    height: auto;
+    margin-bottom: auto;
+    padding:5px;
+
+}
+nav #logo{ 
+float: left;
+max-width: 400px;
+height:150px;    
+}
+nav ul{
+    float:right;
+    list-style-type: none;
+}
+ li{
+    display:inline;
+}
+
+nav a{
+    /* navagation bar link innards*/
+    display: inline-block;
+    color: whitesmoke;
+    text-align: left;
+    padding: 42px 30px;
+    text-decoration: none;
+    font-style: oblique;
+    font-family: monospace;
+    font-size: 28px;
+    transition: .5s;
+}
+
+nav a:hover {
+    background: #FAD255;
+    color: black;
+}
+
+div #homepage-background{
+    position: relative;
+    overflow: scroll;
+}
+.mySlides{
+/* slides*/
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:   cover;
+    max-height: 650px;
+    max-width: 650px;
+    padding-top: 200px;
+}
