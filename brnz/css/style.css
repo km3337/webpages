@@ -9,7 +9,7 @@ nav{
     top: 0px; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */    
     height: auto;
-    margin-bottom: auto;
+    margin: 0px;
     padding:5px;
 
 }
