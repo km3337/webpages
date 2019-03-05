@@ -1,64 +1,84 @@
 
 body{
+    /* a cool background effect I found on the interwebz */
     background-image: url(ripple_blue_green.gif) ;
+    margin: 0; /* fixes weird indenting issues on the nav bar.*/
 }
 nav{
     /*navagation bar setup*/
-    background-color:black;
+    background-color: black;
     position: fixed; /* Set the navbar to fixed position */
-    top: 0px; /* Position the navbar at the top of the page */
+    top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */    
-    height: auto;
-    margin-bottom: auto;
-    padding:5px;
+    height: 11%; 
+    align-items: center;
+}
 
+nav #logo{
+float: left; /* forces other items to begin to align from the logos position on the left. */
+max-width: 30%;
+max-height: 60px;
+padding-top: 4px;
 }
-nav #logo{ 
-float: left;
-max-width: 400px;
-height:150px;    
+
+nav ul #navigation{
+    list-style-type: none; /* this removes the default circle from an unordered list. */
 }
-nav ul{
-    float:right;
-    list-style-type: none;
-}
- li{
-    display:inline;
+nav li{
+    display: inline;
 }
 
 nav a{
     /* navagation bar link innards*/
     display: inline-block;
     color: whitesmoke;
-    text-align: left;
-    padding: 42px 30px;
+    padding: 10px 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-decoration: none;
     font-style: oblique;
     font-family: monospace;
-    font-size: 28px;
+    font-size: 20px;
     transition: .5s;
+    width:auto;
 }
 
 nav a:hover {
+    /* this gives me a cool transition effect on buttons in the navigation bar!*/
     background: #FAD255;
     color: black;
 }
 
-div #homepage-background{
-    position: relative;
-    overflow: scroll;
+
+#textbox li{
+    /* gives my textbox a background bubble to make it easier to read*/
+    float: none;
+    align-items: center;
+    background-color: aliceblue;
+    font-family: monospace;
+    display: block;
+    max-width: 990px;
+    padding: 7px 7px; /* added padding to make the list items look continuous */
 }
+
 .mySlides{
-/* slides*/
-    height: 100%;
+/* formatting for slide images*/
+    height: 100%; /* height and width is relative to the browser size */
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
     width: 100%;
-    background-repeat: no-repeat;
-    background-size:   cover;
-    max-height: 650px;
-    max-width: 650px;
-    padding-top: 200px;
+    max-height: 600px; /* I've specificed max sizes instead of hard coding the exact sizes of images.*/
+    max-width: 600px;
+    padding-top: 30px;
+}
+
+.twitter-follow-button{
+    /* attempting to center the follow button...*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
