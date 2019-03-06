@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Political profile - Totally not selling your data!</title>
+    <link rel="stylesheet" type="text/css" href="survey.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!--- this is the landing page for the site, allowing users to select an affiliation --->
+</head>
+<body>
+<div class="dropdown">
+  <button id="homebtn" class="dropbtn">Already a member?</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Login</a>
+    <a href="#">Forgot Password</a>
+  </div>
+</div>
+
+<div class="survey-backdrop">
+    <h2> Starting Survey</h2>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+    <form>
+        <section>
+            <p> Are you registered to vote?<strong><abbr title="required"> *</abbr></strong></p>
+            <select name="isRegistered">
+                <option value="yes"> Yes</option>
+                <option value="no" selected> No</option>
+            </select>
+            <p>What election did you last vote in?</p>
+            <textarea maxlength="50"> Enter text here...</textarea>
+            <p> On what date?</p>
+            <input name="vote-date"type="date">
+            <p> How many times have you voted?</p>
+           <input type="number" id="vote-amt" name="vote-amt"
+           min="0" max="100">
+            <p> How likely are you to vote in the next election?</p>
+            <input type="range" list="tickmarks">
+            <datalist id="tickmarks">
+            <option value="0" label="Not likely">
+            <option value="10">
+            <option value="20">
+            <option value="30">
+            <option value="40">
+            <option value="50" label="Not sure">
+            <option value="60">
+            <option value="70">
+            <option value="80">
+            <option value="90">
+            <option value="100" label="Very Likely">
+            </datalist>
+        </section>
+        <section>
+        <h2>Registration</h2>
+        <p>Please enter a valid email address: <strong><abbr title="required"> *</abbr></strong></p>
+        <input id="emailfield" type="email">
+        <p>Password:<strong><abbr title="required"> *</abbr></strong></p>
+        <input type="password" id="pwd" name="password">
+        <p> Verify password:<strong><abbr title="required"> *</abbr></strong></p>
+        <input type="password" id="pwdconfirm" name="passwordconfirm">   
+        <p>Please enter your primary phone #:</p>
+        <input id="phonefield" type="tel">
+        </section>
+        <p> <button type="submit">Sign me up!</button> </p>
+    </form>
+</div>
+    
+    
+    
+    
+    
+<script>
+    // Get the button, and when the user clicks on it, execute toggleDropdown
+document.getElementById("homebtn").onclick = function() {toggleDropdown()};
+
+/* toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function toggleDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
+</body>

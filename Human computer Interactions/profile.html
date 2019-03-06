@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Political profile - Totally not selling your data!</title>
+    <link rel="stylesheet" type="text/css" href="profile.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!--- Profile page for the site, view your location, keep track of elections in your area. --->
+</head>
+<body>
+    <button id="homebtn">Logout</button>
+    <form>
+        <!--- Converts all text to all caps --->
+    <textarea maxlength="300"> Yell at the President!</textarea>    
+    </form>
+    <button id = "locator">Find my Coordinates</button><br/>
+    <p id = "status"></p>
+    <a id = "map-link" target="_blank"></a>
+    <h3>My Map</h3>
+    <div id="map"></div>
+    audio controls>
+  <source src="viper.mp3" type="audio/mp3">
+  <source src="viper.ogg" type="audio/ogg">
+  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
+
+    
+<script>
+    
+function findMyCords() {
+
+  const status = document.querySelector('#status');
+  const mapLink = document.querySelector('#map-link');
+
+  mapLink.href = '';
+  mapLink.textContent = '';
+
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    status.textContent = '';
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+}
+
+document.querySelector('#locator').addEventListener('click', findMyCords);
+</script>
+</body>
