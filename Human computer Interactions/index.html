@@ -11,7 +11,7 @@
 <div class="dropdown">
   <button id="homebtn" class="dropbtn">Already a member?</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="#">Login</a>
+    <a href="profile.html">Login</a>
     <a href="#">Forgot Password</a>
   </div>
 </div>
@@ -42,21 +42,24 @@
 </div>
     
 
-<div class="next">
-   <button id="close-CSS" type="button" disabled></button>
+<div class="next" id="next">
+   <button id="close-CSS" type="button" disabled><a href="survey.html"></a></button>
     </div>
 
 <script>
     // Get the button, and when the user clicks on it, execute toggleDropdown
 document.getElementById("homebtn").onclick = function() {toggleDropdown()};
+document.geElementById("democrat").onclick = function() {toggleNext()};
+document.getElementByID("undecided").onclick = function(){toggleNext()};
+document.getElementByID("republican").onclick = function(){toggleNext()};
 
 /* toggles between adding and removing the show class, which is used to hide and show the dropdown content */
 function toggleDropdown() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function toggleNextbutton(){
-    document.getElementById("")
+function toggleNext(){
+    document.getElementById('close-CSS').disabled = false;
 }
 </script>
 </body>

@@ -11,29 +11,34 @@
 <div class="dropdown">
   <button id="homebtn" class="dropbtn">Already a member?</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="#">Login</a>
+    <a href="profile.css">Login</a>
     <a href="#">Forgot Password</a>
   </div>
 </div>
 
-<div class="survey-backdrop">
-    <h2> Starting Survey</h2>
-    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+<div class="container">
+     <p>Required fields are followed by *</p>
+    <h2>  Starting Survey</h2>
     <form>
-        <section>
-            <p> Are you registered to vote?<strong><abbr title="required"> *</abbr></strong></p>
-            <select name="isRegistered">
+        <section class=survey>
+            <label for="register">Are you registered to vote? <span>*</span></label>
+            <select type="register" id="register" name="register" required>
                 <option value="yes"> Yes</option>
                 <option value="no" selected> No</option>
             </select>
-            <p>What election did you last vote in?</p>
-            <textarea maxlength="50"> Enter text here...</textarea>
-            <p> On what date?</p>
-            <input name="vote-date"type="date">
-            <p> How many times have you voted?</p>
-           <input type="number" id="vote-amt" name="vote-amt"
+            <p></p>
+            <label for="info">What election did you last vote in?</label>
+            <textarea id="info" name="info" maxlength="50">Enter text here...</textarea>
+            <p></p>
+            <p></p>
+            <label for="date"> On what date?</label>
+            <input name="date" type="date" id="date">
+            <p></p>
+            <label for="voteamt">How many times have you voted?</label>
+           <input type="number" id="voteamt" name="voteamt"
            min="0" max="100">
-            <p> How likely are you to vote in the next election?</p>
+            <p></p>
+            <label for="tickmarks"> How likely are you to vote in the next election?</label>
             <input type="range" list="tickmarks">
             <datalist id="tickmarks">
             <option value="0" label="Not likely">
@@ -49,18 +54,21 @@
             <option value="100" label="Very Likely">
             </datalist>
         </section>
-        <section>
-        <h2>Registration</h2>
-        <p>Please enter a valid email address: <strong><abbr title="required"> *</abbr></strong></p>
-        <input id="emailfield" type="email">
-        <p>Password:<strong><abbr title="required"> *</abbr></strong></p>
-        <input type="password" id="pwd" name="password">
-        <p> Verify password:<strong><abbr title="required"> *</abbr></strong></p>
-        <input type="password" id="pwdconfirm" name="passwordconfirm">   
-        <p>Please enter your primary phone #:</p>
-        <input id="phonefield" type="tel">
+        <section class="registration">
+            <h2> Registration</h2>
+            <label for="emailfield">Please enter a valid email address: * </label>
+            <input id="emailfield" type="email" required>
+            <p></p>
+            <label for="pwd1">Password: * </label>
+            <input type="password" id="pwd1" name="pwd1" onchange='check_form();' required>
+            <p></p>
+            <label for="pwd2">Verify password:</label>
+            <input type="password" id="pwd2" name="pwd2" onchange='check_form();' required>
+            <p></p>
+            <label for="phonefield">Please enter your primary phone #:</label>
+            <input id="phonefield" type="tel">
         </section>
-        <p> <button type="submit">Sign me up!</button> </p>
+        <p> <button type="submit" id="submit" disabled>Sign me up!</button> </p>
     </form>
 </div>
     
@@ -69,12 +77,22 @@
     
     
 <script>
+    
     // Get the button, and when the user clicks on it, execute toggleDropdown
 document.getElementById("homebtn").onclick = function() {toggleDropdown()};
 
 /* toggles between adding and removing the show class, which is used to hide and show the dropdown content */
 function toggleDropdown() {
   document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function check_form() {
+    if (document.getElementById('pwd1').value ==
+            document.getElementById('pwd2').value) {
+        document.getElementById('submit').disabled = false;
+    } else {
+        document.getElementById('submit').disabled = true;
+    }
 }
 </script>
 </body>

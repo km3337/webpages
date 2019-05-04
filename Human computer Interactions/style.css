@@ -73,6 +73,9 @@ body{
     border-color: cadetblue;
 }
 
+#democrat img:hover{
+    background-color:inherit;
+}
 #republican img{
     border-color: indianred;
 }
